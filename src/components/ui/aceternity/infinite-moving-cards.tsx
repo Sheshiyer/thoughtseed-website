@@ -7,7 +7,7 @@ import { twMerge } from "tailwind-merge";
 import Image from "next/image";
 
 // Local cn function since we're having path alias issues
-function cn(...inputs: any[]) {
+function cn(...inputs: (string | undefined | null | boolean | Record<string, boolean>)[]) {
   return twMerge(clsx(inputs));
 }
 

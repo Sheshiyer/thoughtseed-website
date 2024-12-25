@@ -12,13 +12,11 @@ function cn(...inputs: (string | number | boolean | undefined | null | { [key: s
 interface ParallaxScrollProps {
   children: React.ReactNode;
   className?: string;
-  baseVelocity?: number;
 }
 
 export function ParallaxScroll({
   children,
   className,
-  baseVelocity = 2,
 }: ParallaxScrollProps) {
   const baseX = useMotionValue(0);
   const scrollRef = useRef<HTMLDivElement>(null);

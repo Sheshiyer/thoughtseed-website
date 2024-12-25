@@ -29,7 +29,7 @@ export const ContactForm = () => {
       
       setSubmitStatus('success');
       setFormData({ name: "", email: "", message: "" });
-    } catch (_error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -124,7 +124,7 @@ export const ContactForm = () => {
             animate={{ opacity: 1 }}
             className="text-green-400 text-sm text-center"
           >
-            Message sent successfully! We'll get back to you soon.
+            Message sent successfully! We&apos;ll get back to you soon.
           </motion.div>
         )}
 
