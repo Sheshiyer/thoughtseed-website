@@ -65,7 +65,7 @@ export function InfiniteMovingCards({
         >
           {duplicatedItems.map((item, idx) => (
           <div
-            key={item.id + idx}
+            key={`${row}-${item.id}-${idx}`}
             className="relative group w-[350px] h-[200px] overflow-hidden rounded-xl bg-gradient-to-br from-quantum-blue/10 via-consciousness-teal/10 to-energetic-orange/10 border border-white/10 backdrop-blur-sm p-8 mx-[10px]"
           >
             <div className="relative z-10">
