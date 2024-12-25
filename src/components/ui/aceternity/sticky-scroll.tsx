@@ -3,6 +3,7 @@
 import React, { useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface StickyScrollProps {
   content: {
@@ -68,9 +69,11 @@ export function StickyScroll({
                   }}
                   transition={{ duration: 0.5, delay: 0.1 }}
                 >
-                  <img 
+                  <Image 
                     src={item.image} 
-                    alt={item.title} 
+                    alt={item.title}
+                    width={600}
+                    height={192}
                     className="w-full h-48 object-cover rounded-lg shadow-lg"
                   />
                 </motion.div>

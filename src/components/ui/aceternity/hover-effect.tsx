@@ -4,6 +4,7 @@ import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 // Local cn function since we're having path alias issues
@@ -23,7 +24,7 @@ interface HoverEffectProps {
 }
 
 export function HoverEffect({ items, className }: HoverEffectProps) {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div className={cn("grid grid-cols-2 md:grid-cols-4 gap-4", className)}>
@@ -54,9 +55,11 @@ export function HoverEffect({ items, className }: HoverEffectProps) {
           </AnimatePresence>
           <div className="relative z-10 flex flex-col space-y-4">
             {item.image && (
-              <img 
+              <Image 
                 src={item.image} 
                 alt={item.title}
+                width={400}
+                height={160}
                 className="w-full h-40 object-cover rounded-lg"
               />
             )}

@@ -4,6 +4,7 @@ import { Timeline } from "../../components/ui/timeline";
 import { BackgroundBeams } from "../../components/ui/background-beams";
 import { HoverBorderGradient } from "../../components/ui/hover-border-gradient";
 import { TextGenerateEffect } from "../../components/ui/text-generate-effect";
+import Image from "next/image";
 
 interface Project {
   name: string;
@@ -145,9 +146,11 @@ export default function ProjectsPage() {
         as="div"
       >
         <div className="aspect-video relative overflow-hidden rounded-lg mb-6">
-          <img
+          <Image
             src={project.image}
             alt={project.name}
+            width={640}
+            height={360}
             className="object-cover w-full h-full"
           />
         </div>

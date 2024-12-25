@@ -1,7 +1,15 @@
 "use client";
 import React from "react";
 import { useEffect, useRef } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
+
+interface Particle {
+  x: number;
+  y: number;
+  size: number;
+  speedX: number;
+  speedY: number;
+}
 
 export const SparklesCore = (props: {
   id?: string;
@@ -26,7 +34,7 @@ export const SparklesCore = (props: {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const canvasContainerRef = useRef<HTMLDivElement>(null);
   const context = useRef<CanvasRenderingContext2D | null>(null);
-  const particles = useRef<any[]>([]);
+  const particles = useRef<Particle[]>([]);
   const animationFrameId = useRef<number | null>(null);
   const isAnimating = useRef<boolean>(false);
 

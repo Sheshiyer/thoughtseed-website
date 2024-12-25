@@ -51,8 +51,6 @@ export default function TeamSection() {
             content: member.quote,
             image: member.image,
           }))}
-          direction="right"
-          speed="slow"
           pauseOnHover={true}
         />
       </div>

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { cn } from "../../lib/utils";
 
@@ -26,7 +26,7 @@ export const TextGenerateEffect = ({
     margin: "0px 0px -200px 0px",
     amount: 0.3
   });
-  let wordsArray = words.split(" ");
+  const wordsArray = words.split(" ");
 
   const containerVariants = {
     hidden: { opacity: 0 },

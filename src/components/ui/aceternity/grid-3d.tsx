@@ -6,7 +6,7 @@ import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 // Local cn function since we're having path alias issues
-function cn(...inputs: any[]) {
+function cn(...inputs: (string | number | boolean | undefined | null | { [key: string]: boolean | undefined | null } | (string | number | boolean | undefined | null | { [key: string]: boolean | undefined | null })[])[]): string {
   return twMerge(clsx(inputs));
 }
 

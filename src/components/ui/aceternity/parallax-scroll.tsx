@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform, useMotionValue } from "framer-motion";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-function cn(...inputs: any[]) {
+function cn(...inputs: (string | number | boolean | undefined | null | { [key: string]: boolean | undefined | null } | (string | number | boolean | undefined | null | { [key: string]: boolean | undefined | null })[])[]): string {
   return twMerge(clsx(inputs));
 }
 
@@ -26,12 +26,6 @@ export function ParallaxScroll({
     target: scrollRef,
     offset: ["start end", "end start"],
   });
-
-  const scrollVelocity = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    [-baseVelocity, 0, baseVelocity]
-  );
 
   const offsetY = useTransform(
     scrollYProgress,

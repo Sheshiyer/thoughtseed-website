@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import Image from "next/image";
 
 // Local cn function since we're having path alias issues
 function cn(...inputs: any[]) {
@@ -20,16 +21,12 @@ interface Card {
 
 interface InfiniteMovingCardsProps {
   items: Card[];
-  direction?: "left" | "right";
-  speed?: "slow" | "normal" | "fast";
   pauseOnHover?: boolean;
   className?: string;
 }
 
 export function InfiniteMovingCards({
   items,
-  direction = "left",
-  speed = "normal",
   pauseOnHover = true,
   className,
 }: InfiniteMovingCardsProps) {
@@ -73,9 +70,11 @@ export function InfiniteMovingCards({
               <div className="flex items-center gap-4">
                 {item.image && (
                   <div className="w-10 h-10 rounded-full overflow-hidden">
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.name}
+                      width={40}
+                      height={40}
                       className="w-full h-full object-cover"
                     />
                   </div>
