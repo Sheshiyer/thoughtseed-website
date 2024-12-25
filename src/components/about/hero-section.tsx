@@ -14,14 +14,14 @@ export default function HeroSection() {
             <>
               <TextGenerateEffect 
                 words="About Thoughtseed"
-                className="text-4xl md:text-6xl font-bold text-center mb-4 text-white"
+                className="h1 text-center mb-4 text-white"
                 variant="h1"
                 duration={0.8}
                 align="center"
               />
               <TextGenerateEffect 
                 words="Bridging ancient wisdom with modern innovation to create transformative digital experiences"
-                className="text-neutral-300 text-center max-w-2xl mx-auto"
+                className="section-description"
                 variant="body"
                 duration={0.5}
                 align="center"

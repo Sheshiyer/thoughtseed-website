@@ -2,14 +2,16 @@
 
 import React from "react";
 import { MainNav } from "../navigation/main-nav";
+import { Footer } from "./footer";
 import { motion, AnimatePresence } from "framer-motion";
+
 interface PageWrapperProps {
   children: React.ReactNode;
 }
 
 export function PageWrapper({ children }: PageWrapperProps) {
   return (
-    <div className="relative min-h-screen bg-black text-white overflow-hidden">
+    <div className="relative min-h-screen bg-black text-white overflow-hidden flex flex-col">
       {/* Navigation */}
       <MainNav />
 
@@ -24,7 +26,7 @@ export function PageWrapper({ children }: PageWrapperProps) {
             stiffness: 260,
             damping: 20,
           }}
-          className="relative pt-24"
+          className="relative pt-24 flex-grow"
         >
           {/* Content Wrapper */}
           <div className="container mx-auto px-4">
@@ -32,6 +34,9 @@ export function PageWrapper({ children }: PageWrapperProps) {
           </div>
         </motion.main>
       </AnimatePresence>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

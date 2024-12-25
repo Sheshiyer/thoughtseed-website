@@ -26,7 +26,7 @@ export function FloatingNavbar() {
     <motion.div
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50"
+      className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50"
     >
       <HoverBorderGradient
         containerClassName="w-auto"
@@ -40,7 +40,7 @@ export function FloatingNavbar() {
               <Link
                 key={link.path}
                 href={link.path}
-                className="text-white/90 hover:text-white transition-colors duration-300"
+                className="text-white/80 hover:text-white transition-all duration-300 hover:scale-105"
               >
                 {link.label}
               </Link>
@@ -50,7 +50,7 @@ export function FloatingNavbar() {
           {/* CTA Button */}
           <Link
             href="/contact"
-            className="ml-8 px-6 py-2 rounded-full bg-white text-black font-medium hover:bg-white/90 transition-colors duration-300"
+            className="ml-8 btn-primary btn-sm"
           >
             Get in Touch
           </Link>

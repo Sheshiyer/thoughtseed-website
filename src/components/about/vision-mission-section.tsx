@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { TextGenerateEffect } from "../../components/ui/text-generate-effect";
 
 export default function VisionMissionSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -19,12 +20,17 @@ export default function VisionMissionSection() {
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
           transition={{ duration: 0.7 }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-[#1A237E]/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[rgb(var(--quantum-blue))]/10 to-transparent" />
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-[#1A237E] to-[#00897B]">
-              Our Vision
-            </h2>
-            <p className="text-lg md:text-xl text-neutral-800 dark:text-neutral-200 max-w-xl">
+            <div className="mb-8">
+              <TextGenerateEffect 
+                words="Our Vision"
+                duration={0.6}
+                variant="h2"
+                align="left"
+              />
+            </div>
+            <p className="text-body text-neutral-800 dark:text-neutral-200 max-w-xl">
               To pioneer the integration of consciousness and technology, creating solutions that bridge ancient wisdom with modern innovation. We envision a future where technology seamlessly enhances human potential through our interdisciplinary approach.
             </p>
           </div>
@@ -37,12 +43,17 @@ export default function VisionMissionSection() {
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
           transition={{ duration: 0.7 }}
         >
-          <div className="absolute inset-0 bg-gradient-to-bl from-[#00897B]/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-bl from-[rgb(var(--consciousness-teal))]/10 to-transparent" />
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-[#00897B] to-[#1A237E]">
-              Our Mission
-            </h2>
-            <p className="text-lg md:text-xl text-neutral-800 dark:text-neutral-200 max-w-xl">
+            <div className="mb-8">
+              <TextGenerateEffect 
+                words="Our Mission"
+                duration={0.6}
+                variant="h2"
+                align="left"
+              />
+            </div>
+            <p className="text-body text-neutral-800 dark:text-neutral-200 max-w-xl">
               To transform groundbreaking ideas into innovative solutions that drive technological advancement and create positive impact. We strive to be at the forefront of AI, machine learning, Web3, VR/AR, and quantum computing, delivering cutting-edge products and services that empower businesses and individuals to thrive in the digital age.
             </p>
           </div>

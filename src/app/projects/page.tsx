@@ -4,8 +4,6 @@ import { Timeline } from "../../components/ui/timeline";
 import { BackgroundBeams } from "../../components/ui/background-beams";
 import { HoverBorderGradient } from "../../components/ui/hover-border-gradient";
 import { TextGenerateEffect } from "../../components/ui/text-generate-effect";
-import { TextHoverEffect } from "../../components/ui/text-hover-effect";
-import Link from "next/link";
 
 interface Project {
   name: string;
@@ -196,30 +194,6 @@ export default function ProjectsPage() {
       </div>
       <Timeline data={timelineData} />
       <BackgroundBeams />
-
-      {/* Footer Section */}
-      <footer className="py-12 border-t border-white/10 bg-black">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col items-center mb-12">
-            <TextHoverEffect text="THOUGHTSEED" />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <nav className="space-y-4">
-              <Link href="/" className="block text-white/70 hover:text-white transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-[#00897B] hover:to-[#1A237E] hover:bg-clip-text hover:text-transparent">Home</Link>
-              <Link href="/about" className="block text-white/70 hover:text-white transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-[#00897B] hover:to-[#1A237E] hover:bg-clip-text hover:text-transparent">About</Link>
-              <Link href="/projects" className="block text-white/70 hover:text-white transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-[#00897B] hover:to-[#1A237E] hover:bg-clip-text hover:text-transparent">Projects</Link>
-            </nav>
-            <div className="space-y-4">
-              <a href="https://linkedin.com" className="block text-white/70 hover:text-white transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-[#00897B] hover:to-[#1A237E] hover:bg-clip-text hover:text-transparent">LinkedIn</a>
-              <a href="https://twitter.com" className="block text-white/70 hover:text-white transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-[#00897B] hover:to-[#1A237E] hover:bg-clip-text hover:text-transparent">Twitter</a>
-              <a href="https://github.com" className="block text-white/70 hover:text-white transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-[#00897B] hover:to-[#1A237E] hover:bg-clip-text hover:text-transparent">GitHub</a>
-            </div>
-            <div className="flex items-center justify-center">
-              <p className="text-caption text-white/50">&copy; {new Date().getFullYear()} Thoughtseed. All rights reserved.</p>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

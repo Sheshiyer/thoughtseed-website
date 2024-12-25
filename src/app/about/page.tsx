@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { PageWrapper } from "../../components/layout/page-wrapper";
 import PhilosophySection from "../../components/about/philosophy-section";
 import VisionMissionSection from "../../components/about/vision-mission-section";
 import ServicesSection from "../../components/about/services-section";
@@ -13,12 +12,12 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <PageWrapper>
+    <>
       <PhilosophySection />
       <VisionMissionSection />
       <ServicesSection />
       <TeamSection />
       <CTASection />
-    </PageWrapper>
+    </>
   );
 }

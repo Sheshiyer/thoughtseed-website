@@ -89,7 +89,7 @@
   }
 
   body {
-    @apply bg-black text-white font-sans text-body;
+    @apply bg-black text-white font-sans text-[16px] leading-[1.5] tracking-[0];
   }
 
   /* Typography System */
@@ -102,36 +102,53 @@
   }
 
   h3, .h3 {
-    @apply font-heading text-h3 font-medium tracking-tight;
+    @apply font-heading text-h3 font-bold tracking-tight;
   }
 
   h4, .h4 {
     @apply font-heading text-h4 font-medium tracking-tight;
   }
 
-  p {
-    @apply font-sans text-body leading-relaxed;
+  p, .text-body {
+    @apply font-sans text-[16px] leading-relaxed tracking-[0];
   }
 
   .text-small {
-    font-size: 14px;
-    line-height: 1.4;
-    letter-spacing: 0.01em;
+    @apply text-sm leading-relaxed tracking-[0.01em];
   }
 
   .text-caption {
-    font-size: 12px;
-    line-height: 1.4;
-    letter-spacing: 0.01em;
+    @apply text-xs leading-relaxed tracking-[0.01em] text-white/60;
   }
 
   /* Section Headers */
   .section-title {
-    @apply text-center mb-4;
+    @apply font-heading text-h2 font-bold tracking-tight text-center mb-4;
   }
 
   .section-description {
-    @apply text-center text-white/80 max-w-3xl mx-auto px-4 mb-12;
+    @apply text-body text-center text-white/80 max-w-3xl mx-auto px-4 mb-12;
+  }
+
+  /* Button System */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply btn bg-white text-black hover:bg-white/90;
+  }
+
+  .btn-secondary {
+    @apply btn border border-white/20 text-white hover:bg-white/10;
+  }
+
+  .btn-sm {
+    @apply px-4 py-2 text-sm;
+  }
+
+  .btn-lg {
+    @apply px-8 py-4 text-lg;
   }
 }
 

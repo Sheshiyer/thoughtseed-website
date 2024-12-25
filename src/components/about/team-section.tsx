@@ -1,6 +1,7 @@
 "use client";
 
 import { InfiniteMovingCards } from "../../components/ui/aceternity/infinite-moving-cards";
+import { TextGenerateEffect } from "../../components/ui/text-generate-effect";
 
 const teamMembers = [
   {
@@ -23,17 +24,25 @@ export default function TeamSection() {
   return (
     <section className="py-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#1A237E] to-[#00897B]">
-          Our Team
-        </h2>
-        <p className="text-neutral-700 dark:text-neutral-300 text-center mb-16 max-w-2xl mx-auto text-lg">
-          Visionary leaders pioneering the future of conscious technology
-        </p>
+        <div className="section-title">
+          <TextGenerateEffect 
+            words="Our Team"
+            duration={0.6}
+            variant="h2"
+            align="center"
+          />
+        </div>
+        <div className="section-description">
+          <TextGenerateEffect 
+            words="Visionary leaders pioneering the future of conscious technology"
+            duration={0.5}
+            variant="body"
+            align="center"
+          />
+        </div>
       </div>
 
-      <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white dark:from-black dark:via-transparent dark:to-black z-10 pointer-events-none" />
-        
+      <div>
         <InfiniteMovingCards
           items={teamMembers.map(member => ({
             id: member.id,

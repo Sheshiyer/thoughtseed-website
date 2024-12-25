@@ -55,10 +55,10 @@ export const WavyBackground = ({
     };
 
     const animate = () => {
-      if (!contextRef.current) return;
+      if (!contextRef.current || !canvasRef.current) return;
       phase += speed === "fast" ? 0.002 : 0.0009;
 
-      const { width, height } = canvasRef.current!.getBoundingClientRect();
+      const { width, height } = canvasRef.current.getBoundingClientRect();
       contextRef.current.clearRect(0, 0, width, height);
 
       const waves = (colors || defaultColors).map((color, i) => {
@@ -84,19 +84,22 @@ export const WavyBackground = ({
       contextRef.current.filter = `blur(${blur}px)`;
 
       waves.forEach(({ color, points }) => {
-        contextRef.current!.fillStyle = color;
-        contextRef.current!.beginPath();
-        contextRef.current!.moveTo(points[0].x, points[0].y);
+        if (!contextRef.current) return;
+        contextRef.current.fillStyle = color;
+        contextRef.current.beginPath();
+        contextRef.current.moveTo(points[0].x, points[0].y);
         points.forEach((point, i) => {
           if (i === 0) return;
           const xc = (point.x + points[i - 1].x) / 2;
           const yc = (point.y + points[i - 1].y) / 2;
-          contextRef.current!.quadraticCurveTo(points[i - 1].x, points[i - 1].y, xc, yc);
+          if (!contextRef.current) return;
+          contextRef.current.quadraticCurveTo(points[i - 1].x, points[i - 1].y, xc, yc);
         });
-        contextRef.current!.lineTo(width, height);
-        contextRef.current!.lineTo(0, height);
-        contextRef.current!.closePath();
-        contextRef.current!.fill();
+        if (!contextRef.current) return;
+        contextRef.current.lineTo(width, height);
+        contextRef.current.lineTo(0, height);
+        contextRef.current.closePath();
+        contextRef.current.fill();
       });
 
       animationFrameId = requestAnimationFrame(animate);

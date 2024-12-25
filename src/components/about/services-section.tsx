@@ -1,6 +1,7 @@
 "use client";
 
 import { HoverEffect } from "../../components/ui/aceternity/hover-effect";
+import { TextGenerateEffect } from "../../components/ui/text-generate-effect";
 
 const services = [
   {
@@ -45,12 +46,22 @@ export default function ServicesSection() {
   return (
     <section className="py-20 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#1A237E] to-[#00897B]">
-          Our Services
-        </h2>
-        <p className="text-neutral-700 dark:text-neutral-300 text-center mb-16 max-w-2xl mx-auto text-lg">
-          Cutting-edge solutions at the intersection of consciousness and technology
-        </p>
+        <div className="section-title">
+          <TextGenerateEffect 
+            words="Our Services"
+            duration={0.6}
+            variant="h2"
+            align="center"
+          />
+        </div>
+        <div className="section-description">
+          <TextGenerateEffect 
+            words="Cutting-edge solutions at the intersection of consciousness and technology"
+            duration={0.5}
+            variant="body"
+            align="center"
+          />
+        </div>
 
         <HoverEffect 
           items={services} 
